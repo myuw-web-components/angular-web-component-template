@@ -1,0 +1,75 @@
+/* Style direct chiled of card (header , body and footer )*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.widget-frame {
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 3px;
+  height: 290px;
+  min-width: 290px;
+  max-width: 290px;
+  color: #333;
+  padding-top: 0px !important;
+}
+
+.widget-header {
+  height: 60px;
+  line-height: 1.1;
+  align-items: center;
+  padding: 0 0 0 0 !important;
+}
+
+.widget-title {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.widget-action {
+  position: absolute;
+  display: inline;
+  top: 0;
+  right: 0;
+  margin: 0;
+  z-index: 50;
+}
+
+.md-icon-button {
+  margin: 0;
+  padding: 0 !important;
+  height: 36px;
+  width: 36px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.md-button {
+  margin: 6px 0;
+}
+
+.widget-description {
+  height: auto;
+}
+
+.description-icon {
+  width: auto;
+  margin: auto 24px auto 0;
+  padding: 0 0 0 16px;
+}
+
+.widget-description > span {
+  padding-left: 0;
+}
+
+.widget-description:focus {
+  outline: none;
+}
+
+.menu-item {
+  width: 100%;
+  text-align: left;
+}
+
+span.spacer {
+  flex: 1 1 auto;
+}

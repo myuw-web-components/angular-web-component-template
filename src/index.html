@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Custom Element</title>
+    <link rel="stylesheet" type="text/css" src="styles.css"/>
+  </head>
+
+  <body>
+    <component-name
+      title="Custom Element"
+      description="This is my custom element!"
+      content="This is an example of what will some day be a custom MyUW Card."
+      fname="custom-elt"
+    >
+    </component-name>
+    <script>
+      const el = document.querySelector('myuw-card');
+      el.addEventListener('deleteCardNotify', e => {
+        console.log("Someone delete me!");
+      });
+    </script>
+  </body>
+</html>
