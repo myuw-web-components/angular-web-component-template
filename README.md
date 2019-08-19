@@ -12,7 +12,7 @@ Run local server with `npm run serve:element`
 Build the element into a single JavaScript file with `npm run build-element`. A single file
 will be generated in `element/element.js`. This build path can be changed in `build-elements.js`
 
-# Building a web component
+# Creating a web component
 
 `src/index.html` is used to render the component locally.
 
