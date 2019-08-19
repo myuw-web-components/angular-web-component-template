@@ -1,4 +1,3 @@
-/* Style direct chiled of card (header , body and footer )*/
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
@@ -14,10 +13,11 @@
 }
 
 .widget-header {
-  height: 60px;
+  height: 60px !important;
   line-height: 1.1;
   align-items: center;
   padding: 0 0 0 0 !important;
+  text-align: center;
 }
 
 .widget-title {
@@ -68,6 +68,7 @@
 .menu-item {
   width: 100%;
   text-align: left;
+  font-family: inherit;
 }
 
 span.spacer {

@@ -12,12 +12,12 @@
     <component-name
       title="Custom Element"
       description="This is my custom element!"
-      content="This is an example of what will some day be a custom MyUW Card."
+      content="This is an example of a web component."
       fname="custom-elt"
     >
     </component-name>
     <script>
-      const el = document.querySelector('myuw-card');
+      const el = document.querySelector('component-name');
       el.addEventListener('deleteCardNotify', e => {
         console.log("Someone delete me!");
       });
