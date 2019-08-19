@@ -1,29 +1,34 @@
 <mat-card class="widget-frame" id="widget-{{ fname }}">
-    <mat-toolbar class="widget-header">
-      <mat-card-title class="widget-title">
-        {{ title }}
-      </mat-card-title>
-      <span class="spacer"></span>
-      <button mat-button class="md-icon-button md-button" matTooltip="Open {{ title }} menu" matTooltipPosition="above" attr.aria-label="Open {{ title }} menu" [matMenuTriggerFor]="menu">
-        <mat-icon style="font-size:18px">more_vert</mat-icon>
+
+  <div class="overlay" *ngIf="isMaintenanceMode()">
+    Is in maintenance mode.
+  </div>
+
+  <mat-toolbar class="widget-header">
+    <mat-card-title class="widget-title">
+      {{ title }}
+    </mat-card-title>
+    <span class="spacer"></span>
+    <button mat-button class="md-icon-button md-button" matTooltip="Open {{ title }} menu" matTooltipPosition="above" attr.aria-label="Open {{ title }} menu" [matMenuTriggerFor]="menu">
+      <mat-icon style="font-size:18px">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="widget-action">
+      <div class="widget-description" tabindex="1" layout="row" layout-align="start center">
+        <mat-icon class="description-icon">info</mat-icon>
+        <span><strong>{{ title }}:</strong> {{ description }}</span>
+      </div>
+      <button class="menu-item" mat-button attr.aria-label="Details about {{ title }}"
+        attr.href="/web/apps/details/{{title}}">
+        <mat-icon>details</mat-icon>
+        Details
       </button>
-      <mat-menu #menu="matMenu" class="widget-action">
-        <div class="widget-description" tabindex="1" layout="row" layout-align="start center">
-          <mat-icon class="description-icon">info</mat-icon>
-          <span><strong>{{ title }}:</strong> {{ description }}</span>
-        </div>
-        <button class="menu-item" mat-button attr.aria-label="Details about {{ title }}"
-          attr.href="/web/apps/details/{{title}}">
-          <mat-icon>details</mat-icon>
-          Details
-        </button>
-        <!-- Remove widget button -->
-        <button mat-button class="menu-item" (click)="handleCardDelete()">
-          <mat-icon>details</mat-icon>
-          Remove Card
-        </button>
-      </mat-menu>
-    </mat-toolbar>
+      <!-- Remove widget button -->
+      <button mat-button class="menu-item" (click)="handleCardDelete()">
+        <mat-icon>details</mat-icon>
+        Remove Card
+      </button>
+    </mat-menu>
+  </mat-toolbar>
   <mat-card-content>
     {{ content }}
   </mat-card-content>
