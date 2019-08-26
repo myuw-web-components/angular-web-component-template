@@ -3,7 +3,8 @@ import {
   ViewEncapsulation,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
+  ElementRef
 } from '@angular/core';
 
 @Component({
@@ -17,13 +18,20 @@ export class ElementComponent {
   @Input() title: string; // Card title
   @Input() description: string; // Card description
   @Input() content: string;
-  @Input() fname: string; // Unique name of the card frame
+  @Input() uid: string; // Unique name of the card
   @Input() lifecycle: string;
 
-  @Output() deleteCardNotify = new EventEmitter<boolean>();
+  constructor(
+    private el: ElementRef
+  ) {}
 
   handleCardDelete() {
-    this.deleteCardNotify.emit(true);
+    this.el.nativeElement
+      .dispatchEvent(new CustomEvent('deleteCardNotify', {
+        detail: this.uid,
+        bubbles: true,
+        composed: true
+      }));
   }
 
   isMaintenanceMode() {
