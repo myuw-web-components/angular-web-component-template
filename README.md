@@ -1,4 +1,9 @@
 # Angular Web Component Template
+
+**`angular-web-component-template` has no known usages and is not currently maintained.**
+
+![No maintenance intended](https://img.shields.io/maintenance/no/2020)
+
 This repo is meant to be a template for uPortal Angular web components.
 
 # Local Development
